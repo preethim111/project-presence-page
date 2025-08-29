@@ -17,6 +17,20 @@ const Awards = () => {
       ],
       type: 'Competition',
       icon: '🏆'
+    },
+    {
+      title: 'Undergraduate Research Scholarship Recipient',
+      organization: 'University of California, San Diego',
+      date: 'September 2025',
+      description: 'Awarded $2,250 grant for undergraduate research excellence and academic achievement',
+      achievements: [
+        'Selected based on academic merit and research potential',
+        'Recognized for outstanding performance in data science coursework',
+        'Funded to pursue independent research projects',
+        'Demonstrates commitment to advancing knowledge in the field'
+      ],
+      type: 'Scholarship',
+      icon: '🎓'
     }
   ];
 

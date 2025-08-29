@@ -19,7 +19,8 @@ const Projects = () => {
       ],
       technologies: ['Python', 'scikit-learn', 'XGBoost', 'Natural Language Processing', 'Flask', 'React.js', 'SQLite', 'RoBERTa'],
       isWinner: true,
-      teamSize: '20+ teams'
+      teamSize: '20+ teams',
+      githubUrl: 'https://github.com/preethim111/Mood-Based-Music-Recommender'
     },
     {
       title: 'FitSync',
@@ -32,7 +33,22 @@ const Projects = () => {
         'Implemented secure user authentication and data persistence using Supabase, allowing users to track their progress'
       ],
       technologies: ['Python', 'TensorFlow.js', 'MediaPipe', 'React', 'Node.js', 'Supabase', 'TypeScript', 'Computer Vision'],
-      isWinner: false
+      isWinner: false,
+      githubUrl: 'https://github.com/preethim111/fit-sync'
+    },
+    {
+      title: 'Glu-coaster',
+      period: 'Feb 2025 – April 2025',
+      description: 'An interactive data visualization dashboard that models post-meal glucose responses, helping users understand how dinner choices affect blood sugar stability.',
+      achievements: [
+        'Engineered synchronized nutrient bar charts and glucose line charts with tooltips, annotations, and NIH guideline overlays',
+        'Built a meal comparison tool that allows side-by-side analysis of nutrient values and glucose curves',
+        'Applied user-centric design principles (color-coding, legends, annotations, hover states) to make complex nutrition and health data accessible',
+        'Demonstrated how consistent, balanced meals can reduce glucose volatility, transforming data into actionable health insights'
+      ],
+      technologies: ['D3.js', 'HTML', 'CSS', 'JavaScript', 'Data Visualization'],
+      isWinner: false,
+      githubUrl: 'https://github.com/echungg1/Glu-coaster'
     }
   ];
 
@@ -48,7 +64,7 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <Card 
               key={index} 
@@ -109,14 +125,14 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-3">
-                  <Button variant="outline" size="sm">
-                    <Github className="mr-2 h-4 w-4" />
-                    View Code
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Live Demo
-                  </Button>
+                  {project.githubUrl && (
+                    <Button variant="outline" size="sm" asChild>
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="mr-2 h-4 w-4" />
+                        View Code
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
