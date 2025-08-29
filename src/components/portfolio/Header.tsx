@@ -16,12 +16,10 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { label: 'About', href: '#about' },
+    { label: 'Bio', href: '#about' },
     { label: 'Experience', href: '#experience' },
-    { label: 'Projects', href: '#projects' },
+    { label: 'Portfolio', href: '#projects' },
     { label: 'Awards', href: '#awards' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Education', href: '#education' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -34,38 +32,36 @@ const Header = () => {
   };
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-background/95 backdrop-blur-sm shadow-soft border-b border-border' 
-          : 'bg-transparent'
-      }`}
-    >
-      <nav className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="text-2xl font-bold text-primary">
-            Preethi Manne
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-hero-bg/95 backdrop-blur-md' 
+        : 'bg-hero-bg/90 backdrop-blur-md'
+    }`}>
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo/Initial */}
+          <div className="text-lg font-light text-hero-text tracking-wider">
+            preethi
           </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          
+          {/* Navigation - Mosley style */}
+          <nav className="hidden md:flex items-center space-x-12">
             {navItems.map((item) => (
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+                className="text-hero-text/70 hover:text-hero-text transition-colors text-sm uppercase tracking-wider font-light"
               >
                 {item.label}
               </button>
             ))}
-          </div>
-
+          </nav>
+          
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden text-hero-text hover:bg-hero-text/10"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -74,13 +70,13 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border">
+          <div className="md:hidden pb-4 border-t border-hero-text/10">
             <div className="flex flex-col space-y-3 pt-4">
               {navItems.map((item) => (
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-left text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
+                  className="text-left text-hero-text/70 hover:text-hero-text transition-colors text-sm uppercase tracking-wider font-light py-2"
                 >
                   {item.label}
                 </button>
@@ -88,7 +84,7 @@ const Header = () => {
             </div>
           </div>
         )}
-      </nav>
+      </div>
     </header>
   );
 };

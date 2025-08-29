@@ -49,6 +49,10 @@ export default {
 					DEFAULT: 'hsl(var(--success))',
 					foreground: 'hsl(var(--success-foreground))'
 				},
+				hero: {
+					bg: 'hsl(var(--hero-bg))',
+					text: 'hsl(var(--hero-text))'
+				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'
