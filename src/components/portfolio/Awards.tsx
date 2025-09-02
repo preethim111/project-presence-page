@@ -46,7 +46,7 @@ const Awards = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto space-y-8">
           {awards.map((award, index) => (
             <Card key={index} className="bg-gradient-to-br from-success/5 to-primary/5 shadow-strong hover:shadow-glow transition-all duration-300 border border-success/20">
               <CardContent className="p-8">
@@ -93,13 +93,15 @@ const Awards = () => {
                   </div>
                 </div>
 
-                {/* Celebration Effect */}
-                <div className="text-center mt-8 p-6 bg-gradient-to-r from-success/10 to-primary/10 rounded-lg border border-success/20">
-                  <div className="text-2xl mb-2">🎉 🏆 🎉</div>
-                  <p className="text-success font-semibold">
-                    Winner among 20+ competing teams
-                  </p>
-                </div>
+                {/* Celebration Effect - Only for competition awards */}
+                {award.type === 'Competition' && (
+                  <div className="text-center mt-8 p-6 bg-gradient-to-r from-success/10 to-primary/10 rounded-lg border border-success/20">
+                    <div className="text-2xl mb-2">🎉 🏆 🎉</div>
+                    <p className="text-success font-semibold">
+                      Winner among 50+ competing teams
+                    </p>
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}

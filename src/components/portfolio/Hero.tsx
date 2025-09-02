@@ -14,13 +14,13 @@ const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Small intro text */}
-          <p className="text-sm md:text-base text-hero-text/60 mb-6 uppercase tracking-wider font-light">
+          {/* <p className="text-sm md:text-base text-hero-text/60 mb-6 uppercase tracking-wider font-light">
             Data Science Student & ML Engineer
-          </p>
+          </p> */}
           
           {/* Large name title - Mosley style */}
-          <h1 className="hero-title text-7xl md:text-9xl lg:text-[12rem] text-hero-text mb-8 leading-none tracking-tight">
-            Preethi<br />Murthy
+          <h1 className="hero-title text-6xl md:text-8xl lg:text-[10rem] text-hero-text mb-8 leading-none tracking-tight">
+            Preethi<br />Manne
           </h1>
           
           {/* Subtitle */}

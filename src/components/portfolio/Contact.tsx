@@ -16,8 +16,24 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    
+    // Create email content
+    const emailSubject = encodeURIComponent(formData.subject);
+    const emailBody = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    
+    // Open default email client with pre-filled content
+    const mailtoLink = `mailto:pmanne@ucsd.edu?subject=${emailSubject}&body=${emailBody}`;
+    window.open(mailtoLink);
+    
+    // Reset form after submission
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -31,8 +47,8 @@ const Contact = () => {
     {
       icon: <Mail className="h-5 w-5" />,
       label: 'Email',
-      value: 'preethi.manne@example.com',
-      href: 'mailto:preethi.manne@example.com'
+      value: 'pmanne@ucsd.edu',
+      href: 'mailto:pmanne@ucsd.edu'
     },
     {
       icon: <Phone className="h-5 w-5" />,
@@ -52,12 +68,12 @@ const Contact = () => {
     {
       icon: <Github className="h-5 w-5" />,
       label: 'GitHub',
-      href: 'https://github.com'
+      href: 'https://github.com/preethim111'
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: 'LinkedIn',
-      href: 'https://linkedin.com'
+      href: 'https://www.linkedin.com/in/preethi-manne111/'
     }
   ];
 

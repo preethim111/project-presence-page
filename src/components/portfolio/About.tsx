@@ -1,23 +1,33 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Brain, Code, TrendingUp, Users, Download, Mail } from 'lucide-react';
+import { Trophy, GraduationCap, Building2, Users, Download, Mail } from 'lucide-react';
 
 const About = () => {
+  const handleResumeDownload = () => {
+    // Create a link element to trigger the download
+    const link = document.createElement('a');
+    link.href = '/Preethi_Manne_Resume.pdf'; // Updated to match your actual filename
+    link.download = 'Preethi_Manne_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const highlights = [
     {
-      icon: <Brain className="h-6 w-6" />,
-      title: 'Machine Learning Expertise',
-      description: 'Experienced in developing predictive models using XGBoost, TensorFlow, and scikit-learn for real-world applications.'
+      icon: <Trophy className="h-6 w-6" />,
+      title: 'Hackathon Winner',
+      description: 'First place winner in DataHacks 2025 hackathon out of 50+ participating teams.'
     },
     {
-      icon: <Code className="h-6 w-6" />,
-      title: 'Full-Stack Development',
-      description: 'Proficient in React, Node.js, and modern web technologies to create end-to-end data science solutions.'
+      icon: <GraduationCap className="h-6 w-6" />,
+      title: 'Undergraduate Research Scholarship Recipient',
+      description: 'Awarded $2,250 grant for research excellence and academic achievement, recognized for outstanding performance in data science coursework.'
     },
     {
-      icon: <TrendingUp className="h-6 w-6" />,
-      title: 'Data Analytics',
-      description: 'Skilled in data visualization, statistical analysis, and building automated reporting pipelines with Power BI.'
+      icon: <Building2 className="h-6 w-6" />,
+      title: 'Corporate Experience',
+      description: 'Developed predictive models at Farmer\'s Insurance, gaining hands-on experience in real-world data science applications and business solutions.'
     },
     {
       icon: <Users className="h-6 w-6" />,
@@ -45,9 +55,9 @@ const About = () => {
               <Card className="bg-gradient-card shadow-medium border-0">
                 <CardContent className="p-8">
                   <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-foreground mb-4">
+                    {/* <h3 className="text-2xl font-bold text-foreground mb-4">
                       Data Science Student & ML Engineer
-                    </h3>
+                    </h3> */}
                     <div className="space-y-4 text-muted-foreground leading-relaxed">
                       <p>
                         I'm a dedicated Data Science student at UC San Diego with a passion for leveraging 
@@ -70,7 +80,10 @@ const About = () => {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button className="bg-primary hover:bg-primary-glow shadow-medium">
+                    <Button 
+                      className="bg-primary hover:bg-primary-glow shadow-medium"
+                      onClick={handleResumeDownload}
+                    >
                       <Download className="mr-2 h-4 w-4" />
                       Download Resume
                     </Button>

@@ -19,7 +19,7 @@ const Experience = () => {
       skills: ['Python', 'XGBoost', 'Amazon SageMaker', 'PostgreSQL', 'Snowflake', 'SQL', 'Power BI', 'SHAP']
     },
     {
-      title: 'Instructional Assistant',
+      title: 'Data Science Instructional Assistant',
       company: 'UCSD Data Science Department',
       location: 'La Jolla, CA',
       period: 'March 2025 – Present',
